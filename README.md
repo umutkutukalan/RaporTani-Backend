@@ -103,7 +103,7 @@ verilen şekilde yazıyoruz ve ‘Connect’ diyoruz. Böylece H2 Console ile ve
 
 Postgres databese’si oluşturalım. Terminale yazdığımız,
 
-```shell
+```bash
 docker run —name postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
 ```
 
@@ -146,6 +146,6 @@ public class User {
 
 String , Integer, Gender ve Role ile atanan parametrelerin Getter-Setter-toString değerlerini Lombok aracılığıyla otomatik olarak arka kısımda oluşturur ve kod temizliğine yardımcı olur.
 
-**Lomboku indiriyoruz ve kurulumunu kullanacağımız IDE’nin dosya konumuna yapıyoruz. Böylelikle Lombok kullanılır hale geliyor**
+**Lomboku indiriyoruz ve kurulumunu kullanacağımız IDE’nin dosya konumuna yapıyoruz. Böylelikle Lombok kullanılır hale geliyor.**
 
 
