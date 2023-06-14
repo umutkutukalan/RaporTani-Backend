@@ -101,7 +101,7 @@ verilen şekilde yazıyoruz ve ‘Connect’ diyoruz. Böylece H2 Console ile ve
 
 ### *Docker ile veri tabanı oluşturma*
 
-Postgres databese’si oluşturalım. Terminale yazdığımız,
+Bir tane Postgres databese’si oluşturalım. Terminale yazdığımız,
 
 ```bash
 docker run —name postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
@@ -122,7 +122,7 @@ komutu ile ‘postgres’ adında ‘password’ şifresiyle oluşan postgres ve
 public class User {
 ```
 
-Örneğin, ‘User’ sınıfına atadığımız JPA '@Data’ anatasyonu; sınıf içinde tanımlanan , 
+Örneğin, ‘User’ sınıfına atadığımız JPA '@Data’ anotasyonu; sınıf içinde tanımlanan , 
 
 ```java
     @Id
@@ -147,5 +147,7 @@ public class User {
 String , Integer, Gender ve Role ile atanan parametrelerin Getter-Setter-toString değerlerini Lombok aracılığıyla otomatik olarak arka kısımda oluşturur ve kod temizliğine yardımcı olur.
 
 **Lomboku indiriyoruz ve kurulumunu kullanacağımız IDE’nin dosya konumuna yapıyoruz. Böylelikle Lombok kullanılır hale geliyor.**
+
+## Backend kodunu çalıştırıyoruz ardından Frontend'i başlatmaya geçiyoruz.
 
 
