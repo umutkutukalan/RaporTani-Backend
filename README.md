@@ -5,12 +5,13 @@ Gerekli Java SDK
 Proje Yönetimi ve Derlemesi
 - Maven
 
+
 ## **DATABASE**
 
 ### *MySQL*(Projemdeki kodları temsili bağlayışım.)
 Projemde MySQL Database’yi kullandım. Spring Projesini MySQL’e bağlamak için;
 
-``` java
+``` properties
 spring.jpa.hibernate.ddl-auto = update
 spring.datasource.url = jdbc:mysql://localhost:3306/Kendi Schema’nızın adı yazılacak
 spring.datasource.username = root // Kendi kullanıcı adınızı yazınız
@@ -20,13 +21,13 @@ spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
 
 Örneğin Schema ismimi ‘RaporTani’ adında oluşturursam;
 
-```java
+```properties
 spring.datasource.url = jdbc:mysql://localhost:3306/RaporTani
 ```
 
 Schema ismini, kullanıcı adını ve şifreyi doğru girdikten sonra MySQL için bağlantı koordinesi oluşmuş oluyor. Spring Security xml. dosyamızda bulunduğu için ve Token işlemi gerçekleştirmediğimiz için, (pom.xml) dosyamızda ki Security Dependency’leri yorum satıları içine alalım;
  
-``` 
+``` xml
 <!--		<dependency>-->
 		<!--			<groupId>org.springframework.boot</groupId>-->
 		<!--			<artifactId>spring-boot-starter-security</artifactId>-->
@@ -62,7 +63,7 @@ public class Doktor {
 
 ### *H2 Database*
 
-``` java
+```xml
 <dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -72,16 +73,16 @@ public class Doktor {
 
 (pom.xml) dosyanımıza eklediğimiz bu dependency ile ‘localhost’ üzerinden Table vo Column değerleri atadığımız değerlere ulaşabiliriz. Spring kodlarını çalıştırdıktan sonra gelen H2 Console söz diziminin yanında çıkacak olan;
 
-```
-```
+
 ```java
 H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:e0b577d6-6828-4484-8b28-5440f50e6e93'
-	
-```java
+```
+		
 http://localhost:8080 bağlantısında olan projemize ‘h2-console’ eklentisini de yaparak;
 http://localhost:8080/h2-console sayfasına tarayıcıdan giriş yapıyoruz.
 
 Açılan Login sayfasının ‘ JDBC URL ‘ sine ,
+
 
 ```java
 Database available at 'jdbc:h2:mem:e0b577d6-6828-4484-8b28-5440f50e6e93'
@@ -89,11 +90,14 @@ Database available at 'jdbc:h2:mem:e0b577d6-6828-4484-8b28-5440f50e6e93'
 
 kısmında gelen jdbc:h2:mem değerini bir bütün şeklinde yazıp, username değerini de;
 
+
 ```java
 url=jdbc:h2:mem:e0b577d6-6828-4484-8b28-5440f50e6e93 user=SA
 ```
 
 verilen şekilde yazıyoruz ve ‘Connect’ diyoruz. Böylece H2 Console ile veri tabanına bağlantı sağlıyoruz.
+
+
 
 ### *Docker ile veri tabanı oluşturma*
 
@@ -104,6 +108,8 @@ docker run —name postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgr
 ```
 
 komutu ile ‘postgres’ adında ‘password’ şifresiyle oluşan postgres veri tabanı oluşuyor. (5432:5432) değeri ile de default code olarak tanımlanıyor.
+
+
 
 ## LOMBOK
 
