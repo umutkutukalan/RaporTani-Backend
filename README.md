@@ -71,7 +71,7 @@ public class Doktor {
 </dependency>
 ```
 
-(pom.xml) dosyanımıza eklediğimiz bu dependency ile ‘localhost’ üzerinden Table vo Column değerleri atadığımız değerlere ulaşabiliriz. Spring kodlarını çalıştırdıktan sonra gelen H2 Console söz diziminin yanında çıkacak olan;
+(pom.xml) dosyamıza eklediğimiz bu dependency ile ‘localhost’ üzerinden Table vo Column değerleri atadığımız veri tabanına ulaşabiliriz. Spring kodlarını çalıştırdıktan sonra gelen H2 Console söz diziminin yanında çıkacak olan;
 
 
 ```java
