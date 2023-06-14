@@ -25,7 +25,7 @@ spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
 spring.datasource.url = jdbc:mysql://localhost:3306/RaporTani
 ```
 
-Schema ismini, kullanıcı adını ve şifreyi doğru girdikten sonra MySQL için bağlantı koordinesi oluşmuş oluyor. Spring Security xml. dosyamızda bulunduğu için ve Token işlemi gerçekleştirmediğimiz için, (pom.xml) dosyamızda ki Security Dependency’leri yorum satıları içine alalım;
+Schema ismini, kullanıcı adını ve şifreyi doğru girdikten sonra MySQL için bağlantı koordinesi oluşmuş oluyor. Spring Security .xml dosyamızda bulunduğu için ve Token işlemi gerçekleştirmediğimiz için, (pom.xml) dosyamızda ki Security Dependency’leri yorum satırları içine alalım;
  
 ``` xml
 <!--		<dependency>-->
@@ -40,7 +40,7 @@ Schema ismini, kullanıcı adını ve şifreyi doğru girdikten sonra MySQL içi
 <!--		</dependency> —> 
 ```
 
-Böylelikle güvenlik duvarını kaldırıp hatasız bir şekilde Veri Tabanı bağlantısı gerçekleşecektir. Bu işlemlerin ardından kod diziminde verilen;
+Böylelikle güvenlik duvarını kaldırıp hatasız bir şekilde veri tabanı bağlantısı gerçekleşecektir. Bu işlemlerin ardından kod diziminde verilen;
  
 ``` java
 @Entity
