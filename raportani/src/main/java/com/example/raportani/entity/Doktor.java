@@ -33,4 +33,5 @@ public class Doktor {
     @Enumerated(EnumType.STRING)
     @Column(name = "drole")
     private Role role;
+
 }

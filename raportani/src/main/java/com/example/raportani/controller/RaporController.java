@@ -25,24 +25,23 @@ public class RaporController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Rapor>> getLectures(@RequestParam(defaultValue = "0") Integer page,
-                                                   @RequestParam(defaultValue = "10") Integer pageSize ){
-        return ResponseEntity.ok(raporService.getAll(PageRequest.of(page,pageSize, Sort.by("id"))));
+    public ResponseEntity<Page<Rapor>> getRaporlar(@RequestParam(defaultValue = "0") Integer page,
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+        return ResponseEntity.ok(raporService.getAll(PageRequest.of(page, pageSize, Sort.by("raporTarih"))));
     }
 
     @PostMapping
-    public ResponseEntity<Rapor> createRapor(@RequestBody Rapor rapor){
+    public ResponseEntity<Rapor> createRapor(@RequestBody Rapor rapor) {
         return ResponseEntity.ok(raporService.save(rapor));
     }
 
-
     @GetMapping("/{id}")
-    public ResponseEntity<Rapor> getRaporById(@PathVariable Integer id){
+    public ResponseEntity<Rapor> getRaporById(@PathVariable Integer id) {
         return ResponseEntity.ok(raporService.getById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Rapor> deleteRaporById(@PathVariable Integer id){
+    public ResponseEntity<Rapor> deleteRaporById(@PathVariable Integer id) {
         raporService.delete(id);
         return ResponseEntity.ok().build();
     }
